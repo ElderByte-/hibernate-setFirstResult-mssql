@@ -1,6 +1,8 @@
 # hibernate-setFirstResult-mssql [HHH-11194](https://hibernate.atlassian.net/browse/HHH-11194)
 A test-case to show that `session.setFirstResult` works on a MSSQL 2000 Server with **Hibernate 4** but no longer with **Hibernate 5**.
 
+As this test case illustrates, the exact same code runs with hibernate `4.3.11.Final`, but does not with `5.2.4.Final`.
+
 
 ## How to reproduce the regression:
 
