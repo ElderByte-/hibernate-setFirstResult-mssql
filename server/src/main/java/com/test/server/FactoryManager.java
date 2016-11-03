@@ -1,8 +1,8 @@
 package com.test.server;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
+//import org.hibernate.boot.MetadataSources;
+//import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import org.hibernate.cfg.Configuration;
@@ -36,20 +36,18 @@ public class FactoryManager {
     /**
      * Set up method for hibernate 4. Must be commented out if using hibernate 5
      */
-    /*
     private void setUpFactory() {
         Configuration configuration = new Configuration().configure();
         StandardServiceRegistryBuilder ssrb = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties());
         this.sessionFactory = configuration.buildSessionFactory(ssrb.build());
     }
-    */
 
 
     /**
      * Set up method for hibernate 5. Must be commented out if using hibernate 4
      */
-
+    /*
     private void setUpFactory() {
         // A SessionFactory is set up once for an application!
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
@@ -65,6 +63,7 @@ public class FactoryManager {
             e.printStackTrace();
         }
     }
+    */
 
 
 

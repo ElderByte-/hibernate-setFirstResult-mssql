@@ -34,26 +34,16 @@ public class TestCase {
         this.sessionFactory = sessionFactory;
     }
 
-    /**
-     * Usage of deprecated class Query is intended as we switch between hibernate v4 and 5.
-     */
-    public List<FooBar> getAllByName(Session session){
-        Query query = session.createQuery("from FooBar");
-        query.setFirstResult(1); // Hibernate 5 crashes with error "query result offset is not supported"
-        query.setMaxResults(5);
-        return (List<FooBar>)query.list();
-    }
-
-    public void create(Session session, String name){
-        session.save(new FooBar(name));
-    }
-
+    private int maxResults = 5;
 
     public void startTest(){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        create(session, "James");
+        for (int i = 0; i < maxResults; i++) {
+            create(session, "James");
+        }
+
         List<FooBar> fooBars = getAllByName(session);
 
         for(FooBar fooBar : fooBars){
@@ -65,6 +55,21 @@ public class TestCase {
         session.close();
 
     }
+
+    public void create(Session session, String name){
+        session.save(new FooBar(name));
+    }
+
+    /**
+     * Usage of deprecated class Query is intended as we switch between hibernate v4 and 5.
+     */
+    public List<FooBar> getAllByName(Session session){
+        Query query = session.createQuery("from FooBar");
+        query.setFirstResult(1); // Hibernate 5 crashes with error "query result offset is not supported"
+        query.setMaxResults(maxResults);
+        return (List<FooBar>)query.list();
+    }
+
 
 
 
