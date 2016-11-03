@@ -1,0 +1,24 @@
+allprojects {
+    version =  '0.1.0'
+
+    tasks.withType(Javadoc) {
+        // Avoid failing builds because of java-doc errors
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding','UTF-8')
+    }
+
+    //Always show stacktrace
+    gradle.startParameter.showStacktrace = org.gradle.api.logging.configuration.ShowStacktrace.ALWAYS
+
+}
+
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14.1'
+}
+
+/**
+ * The stage task used by Heroku-Style PaaS.
+ */
+task stage (dependsOn: ["server:build"])

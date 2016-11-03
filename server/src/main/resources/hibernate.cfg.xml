@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+        <property name="connection.url">jdbc:jtds:sqlserver://192.168.170.50:1433/sagetest;sendStringParametersAsUnicode=false;prepareSQL=0</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password">sa</property>
+        <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+
+        <!-- mappings for annotated classes -->
+        <mapping class="com.test.server.foobars.FooBar"/>
+    </session-factory>
+</hibernate-configuration>
+

@@ -1,0 +1,3 @@
+rootProject.name = 'hibernatepaging.server'
+include 'server'
+
