@@ -1,9 +1,9 @@
-package com.test.server.foobars;
+package com.test.server;
 
 import javax.persistence.*;
 
 /**
- * Todo describe class
+ * The example entity.
  */
 @Entity
 @Table( name = "FooBar" )

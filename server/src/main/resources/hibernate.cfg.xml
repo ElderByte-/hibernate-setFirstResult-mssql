@@ -11,7 +11,7 @@
         <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
 
         <!-- mappings for annotated classes -->
-        <mapping class="com.test.server.foobars.FooBar"/>
+        <mapping class="com.test.server.FooBar"/>
     </session-factory>
 </hibernate-configuration>
 
