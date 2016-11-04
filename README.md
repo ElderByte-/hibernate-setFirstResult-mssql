@@ -20,3 +20,11 @@ java.lang.UnsupportedOperationException: query result offset is not supported
 
 * While the MSSQL Server 2000 does indeed not natively support query offsets, hibernate 4 had a workaround of some kind.
 * Since the Dialects got heavily refactored in hibernate 5, especally the offset and limit part, we assume the regression was introduced there.
+* Since version 5 the SQLServerDialect uses the class TopLimitHandler for handling limit queries. The check for any first row selecton introduced there lead to the error message.
+* It seems that it still works if you just remove the check.
+
+* Involved hibernate classes:
+  * SQLServerDialect 
+  * TopLimitHandler
+  * AbstractLimitHandler (bindLimitParameters)
+  * Loader
