@@ -8,7 +8,8 @@
         <property name="connection.url">jdbc:jtds:sqlserver://192.168.170.50:1433/sagetest;sendStringParametersAsUnicode=false;prepareSQL=0</property>
         <property name="connection.username">sa</property>
         <property name="connection.password">sa</property>
-        <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+
+        <property name="dialect">com.test.server.hibernate.MSSQL2000Dialect</property>
 
         <!-- mappings for annotated classes -->
         <mapping class="com.test.server.FooBar"/>
