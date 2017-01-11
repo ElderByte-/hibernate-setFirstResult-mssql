@@ -9,7 +9,9 @@
         <property name="connection.username">sa</property>
         <property name="connection.password">sa</property>
 
+        <!-- custom regression fix
         <property name="dialect">com.test.server.hibernate.MSSQL2000Dialect</property>
+        -->
 
         <!-- mappings for annotated classes -->
         <mapping class="com.test.server.FooBar"/>
